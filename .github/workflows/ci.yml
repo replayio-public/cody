@@ -26,6 +26,9 @@ jobs:
       #     restore-keys: ${{ runner.os }}-pnpm-store-
       - run: pnpm install
       - run: xvfb-run -a pnpm -C vscode run test:e2e:replay
+        env:
+          RECORD_REPLAY_VERBOSE: 1
+          RECORD_ALL_CONTENT: 1
       - run: ls -alR ~/.replay
         if: always()
       - name: Upload replays
