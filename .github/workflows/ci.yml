@@ -29,7 +29,7 @@ jobs:
         env:
           RECORD_REPLAY_VERBOSE: 1
           RECORD_ALL_CONTENT: 1
-          DEBUG: replay:test-utils:*,pw:api
+          DEBUG: replay:test-utils:*,pw:*
       - run: ls -alR ~/.replay
         if: always()
       - name: Upload replays
