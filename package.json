@@ -23,7 +23,8 @@
     "test": "vitest",
     "test:unit": "vitest run",
     "test:integration": "pnpm -C vscode test:integration",
-    "test:e2e": "pnpm -C vscode test:e2e"
+    "test:e2e": "pnpm -C vscode test:e2e",
+    "test:e2e:replay": "pnpm -C vscode test:e2e:replay"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
