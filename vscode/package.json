@@ -20,6 +20,7 @@
     "release:dry-run": "CODY_RELEASE_DRY_RUN=1 ts-node ./scripts/release.ts",
     "storybook": "storybook dev -p 6007 --no-open --no-version-updates --no-release-notes",
     "test:e2e": "pnpm exec playwright install && pnpm run --silent build:dev && playwright test",
+    "test:e2e:replay": "pnpm exec playwright install && pnpm run --silent build:dev && playwright test --project replay-chromium --reporter=@replayio/playwright/reporter,line",
     "test:integration": "tsc --build ./test/integration && pnpm run --silent build:dev && node --inspect -r ts-node/register dist/tsc/test/integration/main.js",
     "test:unit": "vitest",
     "vscode:prepublish": "scripts/download-rg.sh && pnpm --silent run build",
@@ -1008,6 +1009,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.4.2",
+    "@replayio/playwright": "^1.0.6",
     "@sourcegraph/cody-shared": "workspace:*",
     "@sourcegraph/cody-ui": "workspace:*",
     "@types/stream-json": "^1.7.3",
